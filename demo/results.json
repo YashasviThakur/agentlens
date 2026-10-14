@@ -1,0 +1,1831 @@
+[
+  {
+    "url": "https://todomvc.com/examples/react/dist/",
+    "note": "A client-rendered React app",
+    "report": {
+      "url": "https://todomvc.com/examples/react/dist/",
+      "finalUrl": "https://todomvc.com/examples/react/dist/",
+      "auditedAt": "2026-10-14T12:47:21.392Z",
+      "totalMs": 61676,
+      "score": 57,
+      "grade": "D",
+      "readability": 31,
+      "connection": {
+        "query": "TodoMVC: React",
+        "position": 1,
+        "readability": 31,
+        "quadrant": "visible-unreadable",
+        "headline": "You rank #1 for “TodoMVC: React”, but AI tools get little usable from the page (readability 31/100). Search sends people to you; AI answers will skip or misquote you.",
+        "comparedAgainst": "top results for this query",
+        "rivals": [
+          {
+            "position": 3,
+            "title": "StephenCleary/todomvc-react-redux",
+            "url": "https://github.com/StephenCleary/todomvc-react-redux",
+            "site": "github.com",
+            "fetched": true,
+            "readability": 81,
+            "signals": {
+              "jsFree": true,
+              "jsonLd": false,
+              "openGraph": true,
+              "canonical": false,
+              "metaDescription": true,
+              "singleH1": true,
+              "words": 223
+            }
+          },
+          {
+            "position": 4,
+            "title": "React • TodoMVC",
+            "url": "https://demo.playwright.dev/todomvc/",
+            "site": "demo.playwright.dev",
+            "fetched": true,
+            "readability": 47,
+            "signals": {
+              "jsFree": true,
+              "jsonLd": false,
+              "openGraph": false,
+              "canonical": false,
+              "metaDescription": false,
+              "singleH1": false,
+              "words": 14
+            }
+          },
+          {
+            "position": 7,
+            "title": "TodoMVC: An Angular vs React Comparison - Ben McCann",
+            "url": "https://www.benmccann.com/todo-mvc-angular-vs-react/",
+            "site": "www.benmccann.com",
+            "fetched": false,
+            "error": "target_unreachable"
+          },
+          {
+            "position": 8,
+            "title": "TodoMVC: React",
+            "url": "https://todo-app.tallinn-learning.ee/",
+            "site": "todo-app.tallinn-learning.ee",
+            "fetched": true,
+            "readability": 31,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": false,
+              "openGraph": false,
+              "canonical": false,
+              "metaDescription": false,
+              "singleH1": false,
+              "words": 4
+            }
+          }
+        ],
+        "gaps": [
+          {
+            "signal": "jsFree",
+            "text": "2 of 3 top results for this query serve their main text in the initial HTML. This one does not."
+          },
+          {
+            "signal": "readability",
+            "text": "Their average readability is 53/100 against your 31."
+          },
+          {
+            "signal": "rivalBlocked",
+            "text": "1 of the top results for this query could not be fetched by TinyFish (target_unreachable). They are visible in search but not readable to AI fetch tools, which is an opening."
+          }
+        ]
+      },
+      "page": {
+        "title": "TodoMVC: React",
+        "h1": "",
+        "description": "A TodoMVC written in React."
+      },
+      "categories": [
+        {
+          "id": "access",
+          "label": "Access",
+          "question": "Can AI tools reach it?",
+          "score": 89,
+          "checks": [
+            {
+              "id": "fetch-ok",
+              "category": "access",
+              "label": "AI fetch tools can load the page",
+              "weight": 3,
+              "status": "pass",
+              "detail": "TinyFish Fetch rendered it in 5364 ms.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "http-status",
+              "category": "access",
+              "label": "A plain HTTP request returns 200",
+              "weight": 2,
+              "status": "pass",
+              "detail": "A crawler that does not run JavaScript got HTTP 200.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "robots-ai",
+              "category": "access",
+              "label": "robots.txt lets AI crawlers in",
+              "weight": 2,
+              "status": "pass",
+              "detail": "No robots.txt found, so nothing is blocked.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "llms-txt",
+              "category": "access",
+              "label": "Publishes an llms.txt index",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No /llms.txt. It is a short markdown map that tells LLMs what the site is and where the best pages are.",
+              "fix": "Publish this at /llms.txt (generated from this page and its links):",
+              "snippet": "# Todomvc\n\n> A TodoMVC written in React.\n\n## Key pages\n- [Typescript react](https://todomvc.com/examples/typescript-react)\n- [Home](http://todomvc.com/)"
+            },
+            {
+              "id": "sitemap",
+              "category": "access",
+              "label": "Has a sitemap",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No sitemap.xml found and none declared in robots.txt.",
+              "fix": "Publish /sitemap.xml and reference it from robots.txt with a Sitemap: line.",
+              "snippet": "Sitemap: https://todomvc.com/sitemap.xml"
+            }
+          ]
+        },
+        {
+          "id": "rendering",
+          "label": "Rendering",
+          "question": "Does the content survive without JavaScript?",
+          "score": 0,
+          "checks": [
+            {
+              "id": "js-dependence",
+              "category": "rendering",
+              "label": "Content is in the raw HTML, not injected by JavaScript",
+              "weight": 3,
+              "status": "fail",
+              "detail": "Only 0% of the page's main text is in the HTML served to crawlers (0 of 46 words). The rest appears only after JavaScript runs, so crawlers that skip JS never see it.",
+              "fix": "Server-render or statically generate the main content (SSR / SSG / prerender) so it ships in the first HTML response.",
+              "snippet": ""
+            },
+            {
+              "id": "raw-h1",
+              "category": "rendering",
+              "label": "The main heading is in the raw HTML",
+              "weight": 1,
+              "status": "skip",
+              "detail": "No <h1> found either way (see Structure).",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "content-length",
+              "category": "rendering",
+              "label": "The page has enough text to be useful",
+              "weight": 1,
+              "status": "fail",
+              "detail": "46 words of readable main content after rendering.",
+              "fix": "Thin pages give a model little to quote. Add the substance a reader would look for: what it is, who it is for, key facts.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "structure",
+          "label": "Structure",
+          "question": "Can a model understand it?",
+          "score": 42,
+          "checks": [
+            {
+              "id": "title",
+              "category": "structure",
+              "label": "Descriptive <title>",
+              "weight": 2,
+              "status": "warn",
+              "detail": "\"TodoMVC: React\" (14 characters).",
+              "fix": "Write a specific title of 20–65 characters, in the served HTML, that says what the page is.",
+              "snippet": ""
+            },
+            {
+              "id": "meta-description",
+              "category": "structure",
+              "label": "Meta description",
+              "weight": 2,
+              "status": "warn",
+              "detail": "27 characters: \"A TodoMVC written in React.\"",
+              "fix": "Add <meta name=\"description\"> of 70–160 characters summarising the page in plain language.",
+              "snippet": ""
+            },
+            {
+              "id": "h1-single",
+              "category": "structure",
+              "label": "Exactly one <h1>",
+              "weight": 1,
+              "status": "fail",
+              "detail": "Found 0 <h1> elements.",
+              "fix": "Use a single <h1> that names the page, and <h2>/<h3> for sections.",
+              "snippet": ""
+            },
+            {
+              "id": "heading-order",
+              "category": "structure",
+              "label": "Headings nest in order",
+              "weight": 1,
+              "status": "pass",
+              "detail": "No skipped heading levels.",
+              "fix": "Do not skip levels; models use the outline to understand how the page is organised.",
+              "snippet": ""
+            },
+            {
+              "id": "json-ld",
+              "category": "structure",
+              "label": "Structured data (JSON-LD)",
+              "weight": 2,
+              "status": "fail",
+              "detail": "No JSON-LD in the served HTML. Models and search engines lean on it to know what the page is about.",
+              "fix": "Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+              "snippet": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"TodoMVC: React\",\n  \"description\": \"A TodoMVC written in React.\",\n  \"url\": \"https://todomvc.com/examples/react/dist/\",\n  \"inLanguage\": \"en\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"Todomvc\",\n    \"url\": \"https://todomvc.com\"\n  }\n}\n</script>"
+            },
+            {
+              "id": "canonical",
+              "category": "structure",
+              "label": "Canonical URL",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No <link rel=\"canonical\"> in the served HTML.",
+              "fix": "Add a canonical link so duplicates (tracking params, www/non-www) collapse to one URL.",
+              "snippet": "<link rel=\"canonical\" href=\"https://todomvc.com/examples/react/dist/\">"
+            },
+            {
+              "id": "lang",
+              "category": "structure",
+              "label": "Language declared",
+              "weight": 1,
+              "status": "pass",
+              "detail": "<html lang=\"en\">",
+              "fix": "Set the language on the root element.",
+              "snippet": ""
+            },
+            {
+              "id": "open-graph",
+              "category": "structure",
+              "label": "Open Graph tags",
+              "weight": 1,
+              "status": "fail",
+              "detail": "Present: none.",
+              "fix": "Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+              "snippet": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Todomvc\">\n<meta property=\"og:title\" content=\"TodoMVC: React\">\n<meta property=\"og:description\" content=\"A TodoMVC written in React.\">\n<meta property=\"og:url\" content=\"https://todomvc.com/examples/react/dist/\">\n<meta property=\"og:image\" content=\"https://todomvc.com/og-image.png\">"
+            },
+            {
+              "id": "image-alt",
+              "category": "structure",
+              "label": "Images have alt text",
+              "weight": 1,
+              "status": "skip",
+              "detail": "The served HTML is an empty shell and the rendered view strips images, so there is nothing to inspect.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "landmarks",
+              "category": "structure",
+              "label": "Semantic landmarks",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No <main> or <article> element.",
+              "fix": "Wrap the primary content in <main> so tools can separate it from navigation and footers.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "discovery",
+          "label": "Discovery",
+          "question": "Does search surface it?",
+          "score": 88,
+          "checks": [
+            {
+              "id": "search-presence",
+              "category": "discovery",
+              "label": "Shows up when its own topic is searched",
+              "weight": 3,
+              "status": "pass",
+              "detail": "Ranked #1 for \"TodoMVC: React\".",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "link-graph",
+              "category": "discovery",
+              "label": "Links out to the rest of the site",
+              "weight": 1,
+              "status": "warn",
+              "detail": "2 internal link(s) found out of 11 total.",
+              "fix": "Link to related pages with descriptive anchor text so crawlers can walk the site.",
+              "snippet": ""
+            }
+          ]
+        }
+      ],
+      "views": {
+        "raw": {
+          "available": true,
+          "status": 200,
+          "words": 0,
+          "h1": "",
+          "excerpt": ""
+        },
+        "rendered": {
+          "available": true,
+          "words": 46,
+          "h1": "",
+          "title": "TodoMVC: React",
+          "latencyMs": 5364,
+          "excerpt": "> React is a JavaScript library for building user interfaces. You compose UI from function components and describe state with hooks; React handles the rendering and keeps the UI in sync as state changes. The modern ecosystem (createRoot, Suspense, Server Components) builds on the same component model."
+        },
+        "sharePct": 0
+      },
+      "search": {
+        "ok": true,
+        "query": "TodoMVC: React",
+        "total": 10,
+        "results": [
+          {
+            "position": 1,
+            "title": "React",
+            "url": "https://todomvc.com/examples/react/dist/",
+            "snippet": "React is a JavaScript library for building user interfaces. You compose UI from function components and describe state with hooks; React handles the rendering",
+            "site": "todomvc.com",
+            "isYou": true,
+            "sameDomain": true
+          },
+          {
+            "position": 2,
+            "title": "TodoMVC",
+            "url": "https://todomvc.com/",
+            "snippet": "Helping you select a JavaScript framework - the same Todo app implemented in React, Vue, Svelte, Angular, Lit, Preact and many more.",
+            "site": "todomvc.com",
+            "isYou": false,
+            "sameDomain": true
+          },
+          {
+            "position": 3,
+            "title": "StephenCleary/todomvc-react-redux",
+            "url": "https://github.com/StephenCleary/todomvc-react-redux",
+            "snippet": "TodoMVC React is a JavaScript library for creating user interfaces by Facebook and Instagram. Many people choose to think of React as the V in MVC. it includes ...",
+            "site": "github.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 4,
+            "title": "React • TodoMVC",
+            "url": "https://demo.playwright.dev/todomvc/",
+            "snippet": "This is just a demo of TodoMVC for testing, not the real TodoMVC app. todos. Double-click to edit a todo. Created by Remo H. Jansen. Part of TodoMVC.",
+            "site": "demo.playwright.dev",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 5,
+            "title": "React",
+            "url": "https://todomvc.com/examples/typescript-react/",
+            "snippet": "React • TodoMVC todos Double-click to edit a todo Created by Remo H. Jansen Part of TodoMVC",
+            "site": "todomvc.com",
+            "isYou": false,
+            "sameDomain": true
+          },
+          {
+            "position": 6,
+            "title": "React-Redux",
+            "url": "https://todomvc.com/examples/react-redux/dist/",
+            "snippet": "The official React bindings for Redux. The TodoMVC example pairs React Redux with Redux Toolkit (createSlice, configureStore) for the modern, recommended way ...",
+            "site": "todomvc.com",
+            "isYou": false,
+            "sameDomain": true
+          },
+          {
+            "position": 7,
+            "title": "TodoMVC: An Angular vs React Comparison - Ben McCann",
+            "url": "https://www.benmccann.com/todo-mvc-angular-vs-react/",
+            "snippet": "TodoMVC is a project which aims to provide a comparison of JavaScript frameworks by implementing a todo list in the most popular frameworks.",
+            "site": "www.benmccann.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 8,
+            "title": "TodoMVC: React",
+            "url": "https://todo-app.tallinn-learning.ee/",
+            "snippet": "A TodoMVC written in React. TodoMVC: React todos New Todo Input Double-click to edit a todo Created by the TodoMVC Team",
+            "site": "todo-app.tallinn-learning.ee",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 9,
+            "title": "I've built the TodoMVC app with HTMX and lived to tell ...",
+            "url": "https://dev.to/mbarzeev/ive-built-the-todomvc-app-in-htmx-and-lived-to-tell-the-story-480p",
+            "snippet": "This project was known as TodoMVC, and you can still find its content relevant for technologies like React, Vue, Svelte etc. It has become ...",
+            "site": "dev.to",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 10,
+            "title": "TodoMVC With React Native and Redux - The Bakery",
+            "url": "https://blog.thebakery.io/todomvc-with-react-native-and-redux/",
+            "snippet": "This post is a walkthrough of building a TodoMVC using React Native and Redux.",
+            "site": "blog.thebakery.io",
+            "isYou": false,
+            "sameDomain": false
+          }
+        ],
+        "matched": 1,
+        "domainMatched": 1
+      },
+      "robots": {
+        "present": false,
+        "blocked": []
+      },
+      "verdict": {
+        "source": "rules",
+        "headline": "AI tools can reach this page but will miss or misread parts of it.",
+        "note": "Groq 404",
+        "fixes": [
+          {
+            "title": "Structured data (JSON-LD)",
+            "why": "No JSON-LD in the served HTML. Models and search engines lean on it to know what the page is about. Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+            "snippet": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"TodoMVC: React\",\n  \"description\": \"A TodoMVC written in React.\",\n  \"url\": \"https://todomvc.com/examples/react/dist/\",\n  \"inLanguage\": \"en\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"Todomvc\",\n    \"url\": \"https://todomvc.com\"\n  }\n}\n</script>"
+          },
+          {
+            "title": "Open Graph tags",
+            "why": "Present: none. Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+            "snippet": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Todomvc\">\n<meta property=\"og:title\" content=\"TodoMVC: React\">\n<meta property=\"og:description\" content=\"A TodoMVC written in React.\">\n<meta property=\"og:url\" content=\"https://todomvc.com/examples/react/dist/\">\n<meta property=\"og:image\" content=\"https://todomvc.com/og-image.png\">"
+          },
+          {
+            "title": "Content is in the raw HTML, not injected by JavaScript",
+            "why": "Only 0% of the page's main text is in the HTML served to crawlers (0 of 46 words). The rest appears only after JavaScript runs, so crawlers that skip JS never see it. Server-render or statically generate the main content (SSR / SSG / prerender) so it ships in the first HTML response.",
+            "snippet": ""
+          },
+          {
+            "title": "The page has enough text to be useful",
+            "why": "46 words of readable main content after rendering. Thin pages give a model little to quote. Add the substance a reader would look for: what it is, who it is for, key facts.",
+            "snippet": ""
+          }
+        ]
+      }
+    },
+    "agent": {
+      "ok": false,
+      "error": "The operation was aborted due to timeout"
+    }
+  },
+  {
+    "url": "https://react.dev",
+    "note": "A well-built documentation site",
+    "error": "fetch failed"
+  },
+  {
+    "url": "https://www.dtu.ac.in",
+    "note": "Delhi Technological University",
+    "report": {
+      "url": "https://www.dtu.ac.in",
+      "finalUrl": "https://www.dtu.ac.in",
+      "auditedAt": "2026-10-14T12:49:03.008Z",
+      "totalMs": 35487,
+      "score": 69,
+      "grade": "C",
+      "readability": 56,
+      "connection": {
+        "query": "Delhi Technological University",
+        "position": null,
+        "readability": 56,
+        "quadrant": null,
+        "headline": "Search visibility could not be checked, so readability is shown on its own.",
+        "comparedAgainst": "",
+        "rivals": [],
+        "gaps": []
+      },
+      "page": {
+        "title": "Delhi Technological University",
+        "h1": "",
+        "description": ""
+      },
+      "categories": [
+        {
+          "id": "access",
+          "label": "Access",
+          "question": "Can AI tools reach it?",
+          "score": 89,
+          "checks": [
+            {
+              "id": "fetch-ok",
+              "category": "access",
+              "label": "AI fetch tools can load the page",
+              "weight": 3,
+              "status": "pass",
+              "detail": "TinyFish Fetch rendered it in 3219 ms.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "http-status",
+              "category": "access",
+              "label": "A plain HTTP request returns 200",
+              "weight": 2,
+              "status": "pass",
+              "detail": "A crawler that does not run JavaScript got HTTP 200.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "robots-ai",
+              "category": "access",
+              "label": "robots.txt lets AI crawlers in",
+              "weight": 2,
+              "status": "pass",
+              "detail": "GPTBot, ClaudeBot, PerplexityBot and the other major AI crawlers are allowed.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "llms-txt",
+              "category": "access",
+              "label": "Publishes an llms.txt index",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No /llms.txt. It is a short markdown map that tells LLMs what the site is and where the best pages are.",
+              "fix": "Publish this at /llms.txt (generated from this page and its links):",
+              "snippet": "# Dtu\n\n> Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\n\n## Key pages\n- [Vision.php](https://www.dtu.ac.in/Web/About/vision.php)\n- [Donors.php](https://www.dtu.ac.in/Web/quick_links/donors.php)\n- [Rnd](https://www.dtu.ac.in/Web/rnd)\n- [Nceet](https://www.dtu.ac.in/Web/nceet)\n- [About](https://www.dtu.ac.in/Web/ICC/about)\n- [NIRF2017.php](https://www.dtu.ac.in/Web/quick_links/NIRF2017.php)\n- [2025ResearchandInnovationAwards2025](https://www.dtu.ac.in/Web/programme/2025ResearchandInnovationAwards2025)\n- [Rti.php](https://www.dtu.ac.in/Web/quick_links/rti.php)"
+            },
+            {
+              "id": "sitemap",
+              "category": "access",
+              "label": "Has a sitemap",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No sitemap.xml found and none declared in robots.txt.",
+              "fix": "Publish /sitemap.xml and reference it from robots.txt with a Sitemap: line.",
+              "snippet": "Sitemap: https://www.dtu.ac.in/sitemap.xml"
+            }
+          ]
+        },
+        {
+          "id": "rendering",
+          "label": "Rendering",
+          "question": "Does the content survive without JavaScript?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "js-dependence",
+              "category": "rendering",
+              "label": "Content is in the raw HTML, not injected by JavaScript",
+              "weight": 3,
+              "status": "pass",
+              "detail": "All of the page's main text (17759 words once rendered) is already in the HTML served to crawlers.",
+              "fix": "Server-render or statically generate the main content (SSR / SSG / prerender) so it ships in the first HTML response.",
+              "snippet": ""
+            },
+            {
+              "id": "raw-h1",
+              "category": "rendering",
+              "label": "The main heading is in the raw HTML",
+              "weight": 1,
+              "status": "skip",
+              "detail": "No <h1> found either way (see Structure).",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "content-length",
+              "category": "rendering",
+              "label": "The page has enough text to be useful",
+              "weight": 1,
+              "status": "pass",
+              "detail": "17759 words of readable main content after rendering.",
+              "fix": "Thin pages give a model little to quote. Add the substance a reader would look for: what it is, who it is for, key facts.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "structure",
+          "label": "Structure",
+          "question": "Can a model understand it?",
+          "score": 42,
+          "checks": [
+            {
+              "id": "title",
+              "category": "structure",
+              "label": "Descriptive <title>",
+              "weight": 2,
+              "status": "pass",
+              "detail": "\"Delhi Technological University\" (30 characters).",
+              "fix": "Write a specific title of 20–65 characters, in the served HTML, that says what the page is.",
+              "snippet": ""
+            },
+            {
+              "id": "meta-description",
+              "category": "structure",
+              "label": "Meta description",
+              "weight": 2,
+              "status": "fail",
+              "detail": "No meta description found.",
+              "fix": "Add a description. A draft taken from your opening paragraph; edit it before use:",
+              "snippet": "<meta name=\"description\" content=\"Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\">"
+            },
+            {
+              "id": "h1-single",
+              "category": "structure",
+              "label": "Exactly one <h1>",
+              "weight": 1,
+              "status": "fail",
+              "detail": "Found 0 <h1> elements.",
+              "fix": "Use a single <h1> that names the page, and <h2>/<h3> for sections.",
+              "snippet": ""
+            },
+            {
+              "id": "heading-order",
+              "category": "structure",
+              "label": "Headings nest in order",
+              "weight": 1,
+              "status": "pass",
+              "detail": "No skipped heading levels.",
+              "fix": "Do not skip levels; models use the outline to understand how the page is organised.",
+              "snippet": ""
+            },
+            {
+              "id": "json-ld",
+              "category": "structure",
+              "label": "Structured data (JSON-LD)",
+              "weight": 2,
+              "status": "fail",
+              "detail": "No JSON-LD in the served HTML. Models and search engines lean on it to know what the page is about.",
+              "fix": "Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+              "snippet": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"Delhi Technological University\",\n  \"description\": \"Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\",\n  \"url\": \"https://www.dtu.ac.in/\",\n  \"inLanguage\": \"en\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"Dtu\",\n    \"url\": \"https://www.dtu.ac.in\"\n  }\n}\n</script>"
+            },
+            {
+              "id": "canonical",
+              "category": "structure",
+              "label": "Canonical URL",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No <link rel=\"canonical\"> in the served HTML.",
+              "fix": "Add a canonical link so duplicates (tracking params, www/non-www) collapse to one URL.",
+              "snippet": "<link rel=\"canonical\" href=\"https://www.dtu.ac.in/\">"
+            },
+            {
+              "id": "lang",
+              "category": "structure",
+              "label": "Language declared",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No lang attribute on <html>.",
+              "fix": "Set the language on the root element.",
+              "snippet": "<html lang=\"en\">"
+            },
+            {
+              "id": "open-graph",
+              "category": "structure",
+              "label": "Open Graph tags",
+              "weight": 1,
+              "status": "fail",
+              "detail": "Present: none.",
+              "fix": "Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+              "snippet": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dtu\">\n<meta property=\"og:title\" content=\"Delhi Technological University\">\n<meta property=\"og:description\" content=\"Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\">\n<meta property=\"og:url\" content=\"https://www.dtu.ac.in/\">\n<meta property=\"og:image\" content=\"https://www.dtu.ac.in/og-image.png\">"
+            },
+            {
+              "id": "image-alt",
+              "category": "structure",
+              "label": "Images have alt text",
+              "weight": 1,
+              "status": "pass",
+              "detail": "107 of 107 images have an alt attribute.",
+              "fix": "Give meaningful images descriptive alt text; use alt=\"\" for purely decorative ones.",
+              "snippet": ""
+            },
+            {
+              "id": "landmarks",
+              "category": "structure",
+              "label": "Semantic landmarks",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No <main> or <article> element.",
+              "fix": "Wrap the primary content in <main> so tools can separate it from navigation and footers.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "discovery",
+          "label": "Discovery",
+          "question": "Does search surface it?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "search-presence",
+              "category": "discovery",
+              "label": "Shows up when its own topic is searched",
+              "weight": 3,
+              "status": "skip",
+              "detail": "Search check unavailable: fetch failed",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "link-graph",
+              "category": "discovery",
+              "label": "Links out to the rest of the site",
+              "weight": 1,
+              "status": "pass",
+              "detail": "1171 internal link(s) found out of 1312 total.",
+              "fix": "Link to related pages with descriptive anchor text so crawlers can walk the site.",
+              "snippet": ""
+            }
+          ]
+        }
+      ],
+      "views": {
+        "raw": {
+          "available": true,
+          "status": 200,
+          "words": 17688,
+          "h1": "",
+          "excerpt": "Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell Digital Education Contact Us About Us History Vision & Mission Core Values Research Quality Policy Quality Manual Strategic Plan Visit Us Campus Map IPR Contact Us Administration Chancellor Vice Chancellor Pro Vice Chancellor Court Board Of Management Academic Council Planning Board Finance Committee Deans Academic Head Administrative Officers Ombudsman Academic Academic - UG Academic - PG Programs offered Scheme & Syllabus Admission B.Tech. B.Tech (NRI / FN / PIO) B.Tech (Lateral Entry) B.Tech Continuing Education B.Des (Bachelor of Design) BA(H) Economics BBA MA Economics MBA EMBA M.Tech. M.Des (Master of Design) M.Sc. International Admission MBA (Business Analytics) MBA (FBE) MBA(IEV) Ph.D Academic Units Centres Geoinformatics CoE for EVRT VDSemiX Community Developement Research Science of Happiness Sports Research, Analytics and Rehabilitation Departments Applied Mathematics Applied Physics Biotechnology Chemical Science and Engineering Civil Engineering Computer Science & Engg. Delhi School of Management Electronics & Communication Electrical Engineering Environmental Science & Engineering Geospatial Science & Technology Humanities & Social Sciences Information Technology Mechanical Engineering Design University School of Management & Entrepreneurship Software Engineering Physical Education Schools School of Integrated Lea…"
+        },
+        "rendered": {
+          "available": true,
+          "words": 17759,
+          "h1": "",
+          "title": "Delhi Technological University",
+          "latencyMs": 3219,
+          "excerpt": "Home\nVision & Mission\nEast Delhi Campus\nWall of Donors\nAlumni Affairs\nInternational Affairs\nR&D\nNCEET\nICC\nNIRF\nPhoto Gallery\nStudio\nRTI Info\nEngg Cell\nDigital Education\nContact Us\nAbout Us\nHistory\nVision & Mission\nCore Values\nResearch\nQuality Policy\nQuality Manual\nStrategic Plan\nVisit Us\nCampus Map\nIPR\nContact Us\nAdministration\nChancellor\nVice Chancellor\nPro Vice Chancellor\nCourt\nBoard Of Management\nAcademic Council\nPlanning Board\nFinance Committee\nDeans\nAcademic Head\nAdministrative Officers\nOmbudsman\nAcademic\nAcademic - UG\nAcademic - PG\nPrograms offered\nScheme & Syllabus\nAdmission\nB.Tech.\nB.Tech (NRI / FN / PIO)\nB.Tech (Lateral Entry)\nB.Tech Continuing Education\nB.Des (Bachelor of Design)\nBA(H) Economics\nBBA\nMA Economics\nMBA\nEMBA\nM.Tech.\nM.Des (Master of Design)\nM.Sc.\nInternational Admission\nMBA (Business Analytics)\nMBA\n(FBE)\nMBA\n(IEV)\nPh.D\nAcademic Units\nCentres\nGeoinformatics\nCoE for EVRT\nVDSemiX\nCommunity Developement Research\nScience of Happiness\nSports Research, Analytics and Rehabilitation\nDepartments\nApplied Mathematics\nApplied Physics\nBiotechnology\nChemical Science and Engineering\nCivil Engineering\nComputer Science & Engg.\nDelhi School of Management\nElectronics & Communication\nElectrical Engineering\nEnvironmental Science & Engineering\nGeospatial Science & Technology\nHumanities & Social Sciences\nInformation Technology\nMechanical Engineering\nDesign\nUniversity School of Management & Entrepreneurship\nSoftware Engineering\nPhysical Education\nSchools\nSchool of Integrated Le…"
+        },
+        "sharePct": 100
+      },
+      "search": {
+        "ok": false,
+        "query": "Delhi Technological University",
+        "error": "fetch failed"
+      },
+      "robots": {
+        "present": true,
+        "blocked": []
+      },
+      "verdict": {
+        "source": "rules",
+        "headline": "AI tools can reach this page but will miss or misread parts of it.",
+        "note": "Groq 404",
+        "fixes": [
+          {
+            "title": "Meta description",
+            "why": "No meta description found. Add a description. A draft taken from your opening paragraph; edit it before use:",
+            "snippet": "<meta name=\"description\" content=\"Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\">"
+          },
+          {
+            "title": "Structured data (JSON-LD)",
+            "why": "No JSON-LD in the served HTML. Models and search engines lean on it to know what the page is about. Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+            "snippet": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"Delhi Technological University\",\n  \"description\": \"Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\",\n  \"url\": \"https://www.dtu.ac.in/\",\n  \"inLanguage\": \"en\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"Dtu\",\n    \"url\": \"https://www.dtu.ac.in\"\n  }\n}\n</script>"
+          },
+          {
+            "title": "Open Graph tags",
+            "why": "Present: none. Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+            "snippet": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"Dtu\">\n<meta property=\"og:title\" content=\"Delhi Technological University\">\n<meta property=\"og:description\" content=\"Home Vision & Mission East Delhi Campus Wall of Donors Alumni Affairs International Affairs R&D NCEET ICC NIRF Photo Gallery Studio RTI Info Engg Cell\">\n<meta property=\"og:url\" content=\"https://www.dtu.ac.in/\">\n<meta property=\"og:image\" content=\"https://www.dtu.ac.in/og-image.png\">"
+          },
+          {
+            "title": "Exactly one <h1>",
+            "why": "Found 0 <h1> elements. Use a single <h1> that names the page, and <h2>/<h3> for sections.",
+            "snippet": ""
+          }
+        ]
+      }
+    },
+    "agent": {
+      "ok": true,
+      "steps": 3,
+      "summary": {
+        "whatItIs": "The official website of Delhi Technological University (DTU), a premier public technical university located in Delhi, India.",
+        "whoFor": "Current students, faculty, prospective applicants, alumni, and the general public.",
+        "primaryAction": "Browse university information including admissions, notices, jobs, and events.",
+        "keyFacts": [
+          "Contact: Tel 011-27871018, Fax 011-27871023; located at Shahbad Daulatpur, Main Bawana Road, Delhi.",
+          "The 12th Annual Convocation is scheduled for October 22, 2026.",
+          "Offers programs including B.Tech, BBA, MBA, M.Tech, M.Sc, and Ph.D."
+        ],
+        "blockers": [],
+        "confidence": 0.95
+      },
+      "checks": [
+        {
+          "id": "agent-understands",
+          "label": "An agent can tell what the page is",
+          "status": "pass",
+          "detail": "It concluded: “The official website of Delhi Technological University (DTU), a premier public technical university located in Delhi, India.” (confidence 95%).",
+          "fix": "Say plainly what the page is in the title, the H1 and the first sentence of the main content."
+        },
+        {
+          "id": "agent-action",
+          "label": "An agent can find the main action",
+          "status": "pass",
+          "detail": "Primary action it found: “Browse university information including admissions, notices, jobs, and events.”.",
+          "fix": "Give the page one clearly labelled primary button or link."
+        },
+        {
+          "id": "agent-blockers",
+          "label": "Nothing blocks an agent from reading it",
+          "status": "pass",
+          "detail": "No consent wall, pop-up, login wall or CAPTCHA got in the way.",
+          "fix": "Do not cover the main content with consent banners or pop-ups, and do not gate public content behind interaction."
+        },
+        {
+          "id": "agent-matches",
+          "label": "The page’s own words match what the agent understood",
+          "status": "pass",
+          "detail": "The title, H1 and description use the same vocabulary the agent used to describe the page.",
+          "fix": "Rewrite the title and H1 using the words you would use to explain the page to a stranger."
+        }
+      ]
+    }
+  },
+  {
+    "url": "https://www.tinyfish.ai",
+    "note": "The sponsor’s own site",
+    "report": {
+      "url": "https://www.tinyfish.ai",
+      "finalUrl": "https://www.tinyfish.ai",
+      "auditedAt": "2026-10-14T12:50:18.104Z",
+      "totalMs": 28289,
+      "score": 97,
+      "grade": "A",
+      "readability": 94,
+      "connection": {
+        "query": "TinyFish",
+        "position": 1,
+        "readability": 94,
+        "quadrant": "visible-readable",
+        "headline": "Visible and readable: you rank #1 for “TinyFish” and AI tools can use the page. This is the combination AI answers reward.",
+        "comparedAgainst": "top results for this query",
+        "rivals": [
+          {
+            "position": 2,
+            "title": "TinyFish",
+            "url": "https://www.linkedin.com/company/tinyfish-ai",
+            "site": "www.linkedin.com",
+            "fetched": false,
+            "error": "not_returned",
+            "readability": 86,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": true,
+              "openGraph": true,
+              "canonical": true,
+              "metaDescription": false,
+              "singleH1": true,
+              "words": null
+            }
+          },
+          {
+            "position": 3,
+            "title": "AI agent startup TinyFish raises $47 million in ICONIQ-led ...",
+            "url": "https://www.reuters.com/technology/ai-agent-startup-tinyfish-raises-47-million-iconiq-led-round-2025-08-20/",
+            "site": "www.reuters.com",
+            "fetched": false,
+            "error": "not_returned",
+            "readability": 38,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": false,
+              "openGraph": false,
+              "canonical": false,
+              "metaDescription": false,
+              "singleH1": false,
+              "words": null
+            }
+          },
+          {
+            "position": 4,
+            "title": "TinyFish",
+            "url": "https://github.com/tinyfish-io",
+            "site": "github.com",
+            "fetched": false,
+            "error": "not_returned",
+            "readability": 79,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": false,
+              "openGraph": true,
+              "canonical": true,
+              "metaDescription": true,
+              "singleH1": true,
+              "words": null
+            }
+          },
+          {
+            "position": 5,
+            "title": "TinyFish AI Review - (2026) I Tested an AI Agent That Browses ...",
+            "url": "https://www.youtube.com/watch?v=YDWNz2XzLTU&xstg=CAMSBhUDze3xHw%3D%3D",
+            "site": "www.youtube.com",
+            "fetched": false,
+            "error": "not_returned",
+            "readability": 35,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": false,
+              "openGraph": false,
+              "canonical": false,
+              "metaDescription": false,
+              "singleH1": false,
+              "words": null
+            }
+          }
+        ],
+        "gaps": [
+          {
+            "signal": "rivalBlocked",
+            "text": "4 of the top results for this query could not be fetched by TinyFish (not_returned). They are visible in search but not readable to AI fetch tools, which is an opening."
+          }
+        ]
+      },
+      "page": {
+        "title": "TinyFish — Web Infrastructure for AI Agents",
+        "h1": "The web stackfor AI agents.",
+        "description": "TinyFish provides enterprise infrastructure for AI web agents. Run hundreds of websites simultaneously to navigate, authenticate, extract data, and automate web workflows with a fully serverless architecture."
+      },
+      "categories": [
+        {
+          "id": "access",
+          "label": "Access",
+          "question": "Can AI tools reach it?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "fetch-ok",
+              "category": "access",
+              "label": "AI fetch tools can load the page",
+              "weight": 3,
+              "status": "pass",
+              "detail": "TinyFish Fetch rendered it in 529 ms.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "http-status",
+              "category": "access",
+              "label": "A plain HTTP request returns 200",
+              "weight": 2,
+              "status": "pass",
+              "detail": "A crawler that does not run JavaScript got HTTP 200.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "robots-ai",
+              "category": "access",
+              "label": "robots.txt lets AI crawlers in",
+              "weight": 2,
+              "status": "pass",
+              "detail": "GPTBot, ClaudeBot, PerplexityBot and the other major AI crawlers are allowed.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "llms-txt",
+              "category": "access",
+              "label": "Publishes an llms.txt index",
+              "weight": 1,
+              "status": "pass",
+              "detail": "Found /llms.txt.",
+              "fix": "Publish this at /llms.txt (generated from this page and its links):",
+              "snippet": ""
+            },
+            {
+              "id": "sitemap",
+              "category": "access",
+              "label": "Has a sitemap",
+              "weight": 1,
+              "status": "pass",
+              "detail": "A sitemap is available.",
+              "fix": "Publish /sitemap.xml and reference it from robots.txt with a Sitemap: line.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "rendering",
+          "label": "Rendering",
+          "question": "Does the content survive without JavaScript?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "js-dependence",
+              "category": "rendering",
+              "label": "Content is in the raw HTML, not injected by JavaScript",
+              "weight": 3,
+              "status": "pass",
+              "detail": "All of the page's main text (819 words once rendered) is already in the HTML served to crawlers.",
+              "fix": "Server-render or statically generate the main content (SSR / SSG / prerender) so it ships in the first HTML response.",
+              "snippet": ""
+            },
+            {
+              "id": "raw-h1",
+              "category": "rendering",
+              "label": "The main heading is in the raw HTML",
+              "weight": 1,
+              "status": "pass",
+              "detail": "An <h1> is present before any JavaScript runs.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "content-length",
+              "category": "rendering",
+              "label": "The page has enough text to be useful",
+              "weight": 1,
+              "status": "pass",
+              "detail": "819 words of readable main content after rendering.",
+              "fix": "Thin pages give a model little to quote. Add the substance a reader would look for: what it is, who it is for, key facts.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "structure",
+          "label": "Structure",
+          "question": "Can a model understand it?",
+          "score": 92,
+          "checks": [
+            {
+              "id": "title",
+              "category": "structure",
+              "label": "Descriptive <title>",
+              "weight": 2,
+              "status": "pass",
+              "detail": "\"TinyFish — Web Infrastructure for AI Agents\" (43 characters).",
+              "fix": "Write a specific title of 20–65 characters, in the served HTML, that says what the page is.",
+              "snippet": ""
+            },
+            {
+              "id": "meta-description",
+              "category": "structure",
+              "label": "Meta description",
+              "weight": 2,
+              "status": "warn",
+              "detail": "208 characters: \"TinyFish provides enterprise infrastructure for AI web agents. Run hundreds of websites simultaneously to navigate, auth…\"",
+              "fix": "Add <meta name=\"description\"> of 70–160 characters summarising the page in plain language.",
+              "snippet": ""
+            },
+            {
+              "id": "h1-single",
+              "category": "structure",
+              "label": "Exactly one <h1>",
+              "weight": 1,
+              "status": "pass",
+              "detail": "\"The web stackfor AI agents.\"",
+              "fix": "Use a single <h1> that names the page, and <h2>/<h3> for sections.",
+              "snippet": ""
+            },
+            {
+              "id": "heading-order",
+              "category": "structure",
+              "label": "Headings nest in order",
+              "weight": 1,
+              "status": "pass",
+              "detail": "No skipped heading levels.",
+              "fix": "Do not skip levels; models use the outline to understand how the page is organised.",
+              "snippet": ""
+            },
+            {
+              "id": "json-ld",
+              "category": "structure",
+              "label": "Structured data (JSON-LD)",
+              "weight": 2,
+              "status": "pass",
+              "detail": "2 valid block(s): Organization, WebSite, WebPage, ItemList, FAQPage.",
+              "fix": "Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+              "snippet": ""
+            },
+            {
+              "id": "canonical",
+              "category": "structure",
+              "label": "Canonical URL",
+              "weight": 1,
+              "status": "pass",
+              "detail": "https://www.tinyfish.ai",
+              "fix": "Add a canonical link so duplicates (tracking params, www/non-www) collapse to one URL.",
+              "snippet": ""
+            },
+            {
+              "id": "lang",
+              "category": "structure",
+              "label": "Language declared",
+              "weight": 1,
+              "status": "pass",
+              "detail": "<html lang=\"en\">",
+              "fix": "Set the language on the root element.",
+              "snippet": ""
+            },
+            {
+              "id": "open-graph",
+              "category": "structure",
+              "label": "Open Graph tags",
+              "weight": 1,
+              "status": "pass",
+              "detail": "og:title, og:description and og:image are set.",
+              "fix": "Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+              "snippet": ""
+            },
+            {
+              "id": "image-alt",
+              "category": "structure",
+              "label": "Images have alt text",
+              "weight": 1,
+              "status": "pass",
+              "detail": "53 of 53 images have an alt attribute.",
+              "fix": "Give meaningful images descriptive alt text; use alt=\"\" for purely decorative ones.",
+              "snippet": ""
+            },
+            {
+              "id": "landmarks",
+              "category": "structure",
+              "label": "Semantic landmarks",
+              "weight": 1,
+              "status": "pass",
+              "detail": "Uses <main> or <article>.",
+              "fix": "Wrap the primary content in <main> so tools can separate it from navigation and footers.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "discovery",
+          "label": "Discovery",
+          "question": "Does search surface it?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "search-presence",
+              "category": "discovery",
+              "label": "Shows up when its own topic is searched",
+              "weight": 3,
+              "status": "pass",
+              "detail": "Ranked #1 for \"TinyFish\".",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "link-graph",
+              "category": "discovery",
+              "label": "Links out to the rest of the site",
+              "weight": 1,
+              "status": "pass",
+              "detail": "72 internal link(s) found out of 99 total.",
+              "fix": "Link to related pages with descriptive anchor text so crawlers can walk the site.",
+              "snippet": ""
+            }
+          ]
+        }
+      ],
+      "views": {
+        "raw": {
+          "available": true,
+          "status": 200,
+          "words": 906,
+          "h1": "The web stackfor AI agents.",
+          "excerpt": "The web stackfor AI agents.Search, extract, browse, and act on the web with one platform.Connect TinyFish+9Works with any AITrusted byTrusted byWhat TinyFish can do.Four jobs people hand their agents every day, on the live web.Monitor web pagesGet an alert when a page or topic changes. Prices, filings, job posts.acme.com/pricingMonitoringStarter$19Pro$59Team$129TinyFishnowAcme raised the Pro plan$49 → $59 a monthEnrich recordsCheck contacts and accounts against the live web and fill the gaps.crm.yourco.com/leadsCompanyHeadcountHQGlobex1,240DenverInitech310AustinNorthwind86KestrelUmbrellaChecking northwind.com, kestrel.com2 of 5Research anythingAsk a question, get an answer that links to every source it used.Which suppliers changed owner this year?TinyFish read 214 pagesTwo changed owner: Northwind and Kestrel.companieshouse.gov.uksec.govbloomberg.comreuters.comft.comAutomate portalsSign in, fill forms and pull files from other companies' portals.supplier.acme.com/onboardingFillingSupplier onboardingStep 3 of 10Legal nameYourco Inc.Tax ID84-2917305Contact emailStreet addressNextAnd much more.All solutionsUse withChatGPT,OpenClaw,Claude,Cursor,HermesGrokor in your {code}.Connect TinyFishView API docsGive your agent the web.TinySearchFreeFresh results from the live web. Never cached. Real browser-rendered search that returns structured JSON.Try itTinyFetchFreeFrom rendered page to clean data in one call. Markdown, JSON or HTML, token-efficient.Try itTinyBrowserAccess the web tha…"
+        },
+        "rendered": {
+          "available": true,
+          "words": 819,
+          "h1": "The web stackfor AI agents.",
+          "title": "TinyFish — Web Infrastructure for AI Agents",
+          "latencyMs": 529,
+          "excerpt": "# The web stackfor AI agents.\n\nSearch, extract, browse, and act on the web with one platform.\n\nConnect TinyFish\n\n+9\n\nWorks with any AI\n\nTrusted by\n\nTrusted by\n\n## What TinyFish can do.\n\nFour jobs people hand their agents every day, on the live web.\n\n### Monitor web pages\n\nGet an alert when a page or topic changes. Prices, filings, job posts.\n\n### Enrich records\n\nCheck contacts and accounts against the live web and fill the gaps.\n\n### Research anything\n\nAsk a question, get an answer that links to every source it used.\n\n### Automate portals\n\nSign in, fill forms and pull files from other companies' portals.\n\nAnd much more.All solutions\n\n## Use withChatGPT,Claude,Hermesor in your {code}.\n\nConnect TinyFishView API docs\n\n## Give your agent the web.\n\n* Fresh results from the live web. Never cached. Real browser-rendered search that returns structured JSON.\n\n  Try it\n* From rendered page to clean data in one call. Markdown, JSON or HTML, token-efficient.\n\n  Try it\n* Access the web that search can't reach. A real cloud browser you drive with Playwright, Puppeteer or CDP, with persistent state.\n\n  Try it\n* Navigate, fill forms, authenticate, return structured results. Give it a goal in plain English. It works the live site and brings back the data.\n\n  89.9% on Online-Mind2Web\n\n  Try it\n\nFind current pricing for the Aurora 14 across our retail partners.\n\nYour agent\n\nSearch · “aurora 14 laptop price”searching\n\nAurora 14 Laptopnorthgate.com· updated 2 days ago\n\nIn stock. $1,299.00. Free s…"
+        },
+        "sharePct": 100
+      },
+      "search": {
+        "ok": true,
+        "query": "TinyFish",
+        "total": 7,
+        "results": [
+          {
+            "position": 1,
+            "title": "TinyFish — Web Infrastructure for AI Agents",
+            "url": "https://www.tinyfish.ai/",
+            "snippet": "TinyFish provides enterprise infrastructure for AI web agents. Run hundreds of websites simultaneously to navigate, authenticate, extract data, and automate ...",
+            "site": "www.tinyfish.ai",
+            "isYou": true,
+            "sameDomain": true
+          },
+          {
+            "position": 2,
+            "title": "TinyFish",
+            "url": "https://www.linkedin.com/company/tinyfish-ai",
+            "snippet": "At TinyFish, we're focused on the infrastructure that lets agents log into websites, search and extract live data, fill out forms, submit requests,",
+            "site": "www.linkedin.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 3,
+            "title": "AI agent startup TinyFish raises $47 million in ICONIQ-led ...",
+            "url": "https://www.reuters.com/technology/ai-agent-startup-tinyfish-raises-47-million-iconiq-led-round-2025-08-20/",
+            "snippet": "Founded in 2024, TinyFish is building web-based agents to automate repetitive and complex online tasks for enterprises. Its technology simulates ...",
+            "site": "www.reuters.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 4,
+            "title": "TinyFish",
+            "url": "https://github.com/tinyfish-io",
+            "snippet": "A collection of sample apps and recipes built with the TinyFish web agent. Open-source examples for you to learn & build!",
+            "site": "github.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 5,
+            "title": "TinyFish AI Review - (2026) I Tested an AI Agent That Browses ...",
+            "url": "https://www.youtube.com/watch?v=YDWNz2XzLTU&xstg=CAMSBhUDze3xHw%3D%3D",
+            "snippet": "This TinyFish AI Review explores how the platform approaches web automation by handling tasks in one place, helping users collect data, design ...",
+            "site": "www.youtube.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 6,
+            "title": "TinyFish Search + Fetch are free now — for anyone ...",
+            "url": "https://www.reddit.com/r/AI_Agents/comments/1t3ob7y/tinyfish_search_fetch_are_free_now_for_anyone/",
+            "snippet": "We made Search and Fetch free today. Search gives agents structured, real-time web results- our own index, not a third-party wrapper.",
+            "site": "www.reddit.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 7,
+            "title": "TinyFish - Crunchbase Company Profile & Funding",
+            "url": "https://www.crunchbase.com/organization/tiny-fish",
+            "snippet": "TinyFish is the web operating layer for AI agents, providing the infrastructure agents need to reliably access and operate across the live web.",
+            "site": "www.crunchbase.com",
+            "isYou": false,
+            "sameDomain": false
+          }
+        ],
+        "matched": 1,
+        "domainMatched": 1
+      },
+      "robots": {
+        "present": true,
+        "blocked": []
+      },
+      "verdict": {
+        "source": "rules",
+        "headline": "Well prepared: AI tools can reach, read and understand this page.",
+        "note": "Groq 404",
+        "fixes": [
+          {
+            "title": "Meta description",
+            "why": "208 characters: \"TinyFish provides enterprise infrastructure for AI web agents. Run hundreds of websites simultaneously to navigate, auth…\" Add <meta name=\"description\"> of 70–160 characters summarising the page in plain language.",
+            "snippet": ""
+          }
+        ]
+      }
+    },
+    "agent": {
+      "ok": true,
+      "steps": 3,
+      "summary": {
+        "whatItIs": "TinyFish is a platform that provides web infrastructure and APIs (search, fetch, browser, and agent tools) designed specifically for AI agents to interact with the live web.",
+        "whoFor": "Developers and teams building AI agents",
+        "primaryAction": "Connect TinyFish",
+        "keyFacts": [
+          "Search and Fetch APIs are free on every plan",
+          "Products include TinySearch, TinyFetch, TinyBrowser, and TinyAgent",
+          "Customers include DoorDash, ClassPass, Amazon, Grubhub, and The Zebra"
+        ],
+        "blockers": [],
+        "confidence": 0.95
+      },
+      "checks": [
+        {
+          "id": "agent-understands",
+          "label": "An agent can tell what the page is",
+          "status": "pass",
+          "detail": "It concluded: “TinyFish is a platform that provides web infrastructure and APIs (search, fetch, browser, and agent tools) designed specifically for AI agents to interact with the live web.” (confidence 95%).",
+          "fix": "Say plainly what the page is in the title, the H1 and the first sentence of the main content."
+        },
+        {
+          "id": "agent-action",
+          "label": "An agent can find the main action",
+          "status": "pass",
+          "detail": "Primary action it found: “Connect TinyFish”.",
+          "fix": "Give the page one clearly labelled primary button or link."
+        },
+        {
+          "id": "agent-blockers",
+          "label": "Nothing blocks an agent from reading it",
+          "status": "pass",
+          "detail": "No consent wall, pop-up, login wall or CAPTCHA got in the way.",
+          "fix": "Do not cover the main content with consent banners or pop-ups, and do not gate public content behind interaction."
+        },
+        {
+          "id": "agent-matches",
+          "label": "The page’s own words match what the agent understood",
+          "status": "pass",
+          "detail": "The title, H1 and description use the same vocabulary the agent used to describe the page.",
+          "fix": "Rewrite the title and H1 using the words you would use to explain the page to a stranger."
+        }
+      ]
+    }
+  },
+  {
+    "url": "https://news.ycombinator.com",
+    "note": "Plain HTML, almost no metadata",
+    "report": {
+      "url": "https://news.ycombinator.com",
+      "finalUrl": "https://news.ycombinator.com",
+      "auditedAt": "2026-10-14T12:51:16.097Z",
+      "totalMs": 29646,
+      "score": 67,
+      "grade": "C",
+      "readability": 47,
+      "connection": {
+        "query": "Hacker News",
+        "position": 1,
+        "readability": 47,
+        "quadrant": "visible-unreadable",
+        "headline": "You rank #1 for “Hacker News”, but AI tools get little usable from the page (readability 47/100). Search sends people to you; AI answers will skip or misquote you.",
+        "comparedAgainst": "top results for this query",
+        "rivals": [
+          {
+            "position": 2,
+            "title": "The Hacker News | #1 Trusted Source for Cybersecurity News",
+            "url": "https://thehackernews.com/",
+            "site": "thehackernews.com",
+            "fetched": true,
+            "readability": 94,
+            "signals": {
+              "jsFree": true,
+              "jsonLd": true,
+              "openGraph": true,
+              "canonical": true,
+              "metaDescription": false,
+              "singleH1": true,
+              "words": 157
+            }
+          },
+          {
+            "position": 3,
+            "title": "Hacker News",
+            "url": "https://en.wikipedia.org/wiki/Hacker_News",
+            "site": "en.wikipedia.org",
+            "fetched": true,
+            "readability": 83,
+            "signals": {
+              "jsFree": true,
+              "jsonLd": true,
+              "openGraph": false,
+              "canonical": true,
+              "metaDescription": false,
+              "singleH1": true,
+              "words": 737
+            }
+          },
+          {
+            "position": 4,
+            "title": "The Hacker News (@thehackernews)",
+            "url": "https://www.facebook.com/thehackernews/",
+            "site": "www.facebook.com",
+            "fetched": false,
+            "error": "login_required",
+            "readability": 65,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": false,
+              "openGraph": true,
+              "canonical": true,
+              "metaDescription": true,
+              "singleH1": false,
+              "words": null
+            }
+          },
+          {
+            "position": 5,
+            "title": "r/hackernews",
+            "url": "https://www.reddit.com/r/hackernews/",
+            "site": "www.reddit.com",
+            "fetched": true,
+            "readability": 31,
+            "signals": {
+              "jsFree": false,
+              "jsonLd": false,
+              "openGraph": false,
+              "canonical": false,
+              "metaDescription": false,
+              "singleH1": false,
+              "words": 754
+            }
+          }
+        ],
+        "gaps": [
+          {
+            "signal": "jsonLd",
+            "text": "2 of 3 top results for this query publish structured data (JSON-LD). This one does not."
+          },
+          {
+            "signal": "canonical",
+            "text": "2 of 3 top results for this query declare a canonical URL. This one does not."
+          },
+          {
+            "signal": "singleH1",
+            "text": "2 of 3 top results for this query use exactly one <h1>. This one does not."
+          },
+          {
+            "signal": "readability",
+            "text": "Their average readability is 69/100 against your 47."
+          },
+          {
+            "signal": "rivalBlocked",
+            "text": "1 of the top results for this query could not be fetched by TinyFish (login_required). They are visible in search but not readable to AI fetch tools, which is an opening."
+          }
+        ]
+      },
+      "page": {
+        "title": "Hacker News",
+        "h1": "",
+        "description": ""
+      },
+      "categories": [
+        {
+          "id": "access",
+          "label": "Access",
+          "question": "Can AI tools reach it?",
+          "score": 89,
+          "checks": [
+            {
+              "id": "fetch-ok",
+              "category": "access",
+              "label": "AI fetch tools can load the page",
+              "weight": 3,
+              "status": "pass",
+              "detail": "TinyFish Fetch rendered it in 573 ms.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "http-status",
+              "category": "access",
+              "label": "A plain HTTP request returns 200",
+              "weight": 2,
+              "status": "pass",
+              "detail": "A crawler that does not run JavaScript got HTTP 200.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "robots-ai",
+              "category": "access",
+              "label": "robots.txt lets AI crawlers in",
+              "weight": 2,
+              "status": "pass",
+              "detail": "GPTBot, ClaudeBot, PerplexityBot and the other major AI crawlers are allowed.",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "llms-txt",
+              "category": "access",
+              "label": "Publishes an llms.txt index",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No /llms.txt. It is a short markdown map that tells LLMs what the site is and where the best pages are.",
+              "fix": "Publish this at /llms.txt (generated from this page and its links):",
+              "snippet": "# News\n\n> Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\n\n## Key pages\n- [News](https://news.ycombinator.com/news)\n- [Newest](https://news.ycombinator.com/newest)\n- [Front](https://news.ycombinator.com/front)\n- [Newcomments](https://news.ycombinator.com/newcomments)\n- [Ask](https://news.ycombinator.com/ask)\n- [Show](https://news.ycombinator.com/show)\n- [Jobs](https://news.ycombinator.com/jobs)\n- [Submit](https://news.ycombinator.com/submit)"
+            },
+            {
+              "id": "sitemap",
+              "category": "access",
+              "label": "Has a sitemap",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No sitemap.xml found and none declared in robots.txt.",
+              "fix": "Publish /sitemap.xml and reference it from robots.txt with a Sitemap: line.",
+              "snippet": "Sitemap: https://news.ycombinator.com/sitemap.xml"
+            }
+          ]
+        },
+        {
+          "id": "rendering",
+          "label": "Rendering",
+          "question": "Does the content survive without JavaScript?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "js-dependence",
+              "category": "rendering",
+              "label": "Content is in the raw HTML, not injected by JavaScript",
+              "weight": 3,
+              "status": "pass",
+              "detail": "95% of the page's main text (667 words once rendered) is already in the HTML served to crawlers.",
+              "fix": "Server-render or statically generate the main content (SSR / SSG / prerender) so it ships in the first HTML response.",
+              "snippet": ""
+            },
+            {
+              "id": "raw-h1",
+              "category": "rendering",
+              "label": "The main heading is in the raw HTML",
+              "weight": 1,
+              "status": "skip",
+              "detail": "No <h1> found either way (see Structure).",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "content-length",
+              "category": "rendering",
+              "label": "The page has enough text to be useful",
+              "weight": 1,
+              "status": "pass",
+              "detail": "667 words of readable main content after rendering.",
+              "fix": "Thin pages give a model little to quote. Add the substance a reader would look for: what it is, who it is for, key facts.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "structure",
+          "label": "Structure",
+          "question": "Can a model understand it?",
+          "score": 31,
+          "checks": [
+            {
+              "id": "title",
+              "category": "structure",
+              "label": "Descriptive <title>",
+              "weight": 2,
+              "status": "warn",
+              "detail": "\"Hacker News\" (11 characters).",
+              "fix": "Write a specific title of 20–65 characters, in the served HTML, that says what the page is.",
+              "snippet": ""
+            },
+            {
+              "id": "meta-description",
+              "category": "structure",
+              "label": "Meta description",
+              "weight": 2,
+              "status": "fail",
+              "detail": "No meta description found.",
+              "fix": "Add a description. A draft taken from your opening paragraph; edit it before use:",
+              "snippet": "<meta name=\"description\" content=\"Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\">"
+            },
+            {
+              "id": "h1-single",
+              "category": "structure",
+              "label": "Exactly one <h1>",
+              "weight": 1,
+              "status": "fail",
+              "detail": "Found 0 <h1> elements.",
+              "fix": "Use a single <h1> that names the page, and <h2>/<h3> for sections.",
+              "snippet": ""
+            },
+            {
+              "id": "heading-order",
+              "category": "structure",
+              "label": "Headings nest in order",
+              "weight": 1,
+              "status": "pass",
+              "detail": "No skipped heading levels.",
+              "fix": "Do not skip levels; models use the outline to understand how the page is organised.",
+              "snippet": ""
+            },
+            {
+              "id": "json-ld",
+              "category": "structure",
+              "label": "Structured data (JSON-LD)",
+              "weight": 2,
+              "status": "fail",
+              "detail": "No JSON-LD in the served HTML. Models and search engines lean on it to know what the page is about.",
+              "fix": "Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+              "snippet": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"Hacker News\",\n  \"description\": \"Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\",\n  \"url\": \"https://news.ycombinator.com/\",\n  \"inLanguage\": \"en\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"News\",\n    \"url\": \"https://news.ycombinator.com\"\n  }\n}\n</script>"
+            },
+            {
+              "id": "canonical",
+              "category": "structure",
+              "label": "Canonical URL",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No <link rel=\"canonical\"> in the served HTML.",
+              "fix": "Add a canonical link so duplicates (tracking params, www/non-www) collapse to one URL.",
+              "snippet": "<link rel=\"canonical\" href=\"https://news.ycombinator.com/\">"
+            },
+            {
+              "id": "lang",
+              "category": "structure",
+              "label": "Language declared",
+              "weight": 1,
+              "status": "pass",
+              "detail": "<html lang=\"en\">",
+              "fix": "Set the language on the root element.",
+              "snippet": ""
+            },
+            {
+              "id": "open-graph",
+              "category": "structure",
+              "label": "Open Graph tags",
+              "weight": 1,
+              "status": "fail",
+              "detail": "Present: none.",
+              "fix": "Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+              "snippet": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"News\">\n<meta property=\"og:title\" content=\"Hacker News\">\n<meta property=\"og:description\" content=\"Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\">\n<meta property=\"og:url\" content=\"https://news.ycombinator.com/\">\n<meta property=\"og:image\" content=\"https://news.ycombinator.com/og-image.png\">"
+            },
+            {
+              "id": "image-alt",
+              "category": "structure",
+              "label": "Images have alt text",
+              "weight": 1,
+              "status": "fail",
+              "detail": "0 of 2 images have an alt attribute.",
+              "fix": "Give meaningful images descriptive alt text; use alt=\"\" for purely decorative ones.",
+              "snippet": ""
+            },
+            {
+              "id": "landmarks",
+              "category": "structure",
+              "label": "Semantic landmarks",
+              "weight": 1,
+              "status": "warn",
+              "detail": "No <main> or <article> element.",
+              "fix": "Wrap the primary content in <main> so tools can separate it from navigation and footers.",
+              "snippet": ""
+            }
+          ]
+        },
+        {
+          "id": "discovery",
+          "label": "Discovery",
+          "question": "Does search surface it?",
+          "score": 100,
+          "checks": [
+            {
+              "id": "search-presence",
+              "category": "discovery",
+              "label": "Shows up when its own topic is searched",
+              "weight": 3,
+              "status": "pass",
+              "detail": "Ranked #1 for \"Hacker News\".",
+              "fix": "",
+              "snippet": ""
+            },
+            {
+              "id": "link-graph",
+              "category": "discovery",
+              "label": "Links out to the rest of the site",
+              "weight": 1,
+              "status": "pass",
+              "detail": "195 internal link(s) found out of 229 total.",
+              "fix": "Link to related pages with descriptive anchor text so crawlers can walk the site.",
+              "snippet": ""
+            }
+          ]
+        }
+      ],
+      "views": {
+        "raw": {
+          "available": true,
+          "status": 200,
+          "words": 634,
+          "h1": "",
+          "excerpt": "Hacker Newsnew | past | comments | ask | show | jobs | submitlogin1.Iosevka is an open-source, sans-serif and slab-serif, monospace font (typeof.net)251 points by otobrglez 4 hours ago | hide | 90 comments2.Pg_vectorsearch: An index that is faster than pgvector's IVFFlat and HNSW (github.com/timescale)26 points by jascha_eng 1 hour ago | hide | 4 comments3.The Aaronson Oracle (aaronsonoracle.com)5 points by routeroff 32 minutes ago | hide | 1 comment4.Pulsar at ESUG 2026 (new Smalltalk IDE) (lorenzano.eu)34 points by mpweiher 2 hours ago | hide | 3 comments5.Amazon pushes up prices across the Internet (not-ship.com)125 points by sighborg 3 hours ago | hide | 95 comments6.Sound – Bartosz Ciechanowski (2022) (ciechanow.ski)157 points by dverlaeckt80 10 hours ago | hide | 21 comments7.Show HN: Guitoro, a virtual guitar you strum with your keyboard (guitoro.com)474 points by talccc 17 hours ago | hide | 124 comments8.Same Job, Two Engines: InnoDB and Iceberg Internals (marcpaul.io)32 points by marcbpaul 5 hours ago | hide | 2 comments9.TV4 postpones show after AI agent erases edited material (swedenherald.com)11 points by tobr 2 hours ago | hide | 5 comments10.900-Page Pre-Pantone Guide to Color from 1692 (With Complete High-Res Scan) (openculture.com)191 points by mdp2021 13 hours ago | hide | 28 comments11.Smart people don't think others are stupid (sive.rs)46 points by andsoitis 47 minutes ago | hide | 23 comments12.Show HN: A guided 3D Leonardo da Vinci museum, built in code…"
+        },
+        "rendered": {
+          "available": true,
+          "words": 667,
+          "h1": "",
+          "title": "Hacker News",
+          "latencyMs": 573,
+          "excerpt": "Hacker News\nnew\n|\npast\n|\ncomments\n|\nask\n|\nshow\n|\njobs\n|\nsubmit\nlogin\n1.\nIosevka is an open-source, sans-serif and slab-serif, monospace font\n(\ntypeof.net\n)\n251 points\nby\notobrglez\n4 hours ago\n|\nhide\n|\n90 comments\n2.\nPg\\_vectorsearch: An index that is faster than pgvector's IVFFlat and HNSW\n(\ngithub.com/timescale\n)\n26 points\nby\njascha\\_eng\n1 hour ago\n|\nhide\n|\n4 comments\n3.\nThe Aaronson Oracle\n(\naaronsonoracle.com\n)\n5 points\nby\nrouteroff\n32 minutes ago\n|\nhide\n|\n1 comment\n4.\nPulsar at ESUG 2026 (new Smalltalk IDE)\n(\nlorenzano.eu\n)\n34 points\nby\nmpweiher\n2 hours ago\n|\nhide\n|\n3 comments\n5.\nAmazon pushes up prices across the Internet\n(\nnot-ship.com\n)\n125 points\nby\nsighborg\n3 hours ago\n|\nhide\n|\n95 comments\n6.\nSound – Bartosz Ciechanowski (2022)\n(\nciechanow.ski\n)\n157 points\nby\ndverlaeckt80\n10 hours ago\n|\nhide\n|\n21 comments\n7.\nShow HN: Guitoro, a virtual guitar you strum with your keyboard\n(\nguitoro.com\n)\n474 points\nby\ntalccc\n17 hours ago\n|\nhide\n|\n124 comments\n8.\nSame Job, Two Engines: InnoDB and Iceberg Internals\n(\nmarcpaul.io\n)\n32 points\nby\nmarcbpaul\n5 hours ago\n|\nhide\n|\n2 comments\n9.\nTV4 postpones show after AI agent erases edited material\n(\nswedenherald.com\n)\n11 points\nby\ntobr\n2 hours ago\n|\nhide\n|\n5 comments\n10.\n900-Page Pre-Pantone Guide to Color from 1692 (With Complete High-Res Scan)\n(\nopenculture.com\n)\n191 points\nby\nmdp2021\n13 hours ago\n|\nhide\n|\n28 comments\n11.\nSmart people don't think others are stupid\n(\nsive.rs\n)\n46 points\nby\nandsoitis\n47 minutes ago\n|\nhide\n|\n23 comments\n12.…"
+        },
+        "sharePct": 95
+      },
+      "search": {
+        "ok": true,
+        "query": "Hacker News",
+        "total": 7,
+        "results": [
+          {
+            "position": 1,
+            "title": "Hacker News",
+            "url": "https://news.ycombinator.com/",
+            "snippet": "26. OpenAI engineer arrested in bugging of executive conference room (sfstandard.com). 589 points by forthwall 13 hours ago | hide | 490 comments. 27.",
+            "site": "news.ycombinator.com",
+            "isYou": true,
+            "sameDomain": true
+          },
+          {
+            "position": 2,
+            "title": "The Hacker News | #1 Trusted Source for Cybersecurity News",
+            "url": "https://thehackernews.com/",
+            "snippet": "The Hacker News is the top cybersecurity news platform, delivering real-time updates, threat intelligence, data breach reports, expert analysis, ...",
+            "site": "thehackernews.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 3,
+            "title": "Hacker News",
+            "url": "https://en.wikipedia.org/wiki/Hacker_News",
+            "snippet": "Hacker News (HN) is an American social news website focusing on computer science and entrepreneurship. It is run by the investment fund and startup ...",
+            "site": "en.wikipedia.org",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 4,
+            "title": "The Hacker News (@thehackernews)",
+            "url": "https://www.facebook.com/thehackernews/",
+            "snippet": "#1 Most trusted source for cybersecurity news, insights & analysis — driving action for those who lead and secure. Media/news company.",
+            "site": "www.facebook.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 5,
+            "title": "r/hackernews",
+            "url": "https://www.reddit.com/r/hackernews/",
+            "snippet": "r/hackernews: A mirror of the front page of Hacker News.",
+            "site": "www.reddit.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 6,
+            "title": "The Hacker News (@TheHackersNews) ...",
+            "url": "https://x.com/TheHackersNews",
+            "snippet": "The #1 trusted source for cybersecurity news, insights, and analysis — built for defenders and trusted by decision-makers. The Internet. thehackernews.com.",
+            "site": "x.com",
+            "isYou": false,
+            "sameDomain": false
+          },
+          {
+            "position": 7,
+            "title": "Hacker News (@hackernewsyc)",
+            "url": "https://www.threads.com/@hackernewsyc",
+            "snippet": "4.5K Followers • 91 Threads • Top posts about startups, venture capital, and technology from around the internet. See the latest conversations with...",
+            "site": "www.threads.com",
+            "isYou": false,
+            "sameDomain": false
+          }
+        ],
+        "matched": 1,
+        "domainMatched": 1
+      },
+      "robots": {
+        "present": true,
+        "blocked": []
+      },
+      "verdict": {
+        "source": "rules",
+        "headline": "AI tools can reach this page but will miss or misread parts of it.",
+        "note": "Groq 404",
+        "fixes": [
+          {
+            "title": "Meta description",
+            "why": "No meta description found. Add a description. A draft taken from your opening paragraph; edit it before use:",
+            "snippet": "<meta name=\"description\" content=\"Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\">"
+          },
+          {
+            "title": "Structured data (JSON-LD)",
+            "why": "No JSON-LD in the served HTML. Models and search engines lean on it to know what the page is about. Add this to the <head> and refine the @type (Article, Product, SoftwareApplication, FAQPage…) to match the page:",
+            "snippet": "<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"WebPage\",\n  \"name\": \"Hacker News\",\n  \"description\": \"Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\",\n  \"url\": \"https://news.ycombinator.com/\",\n  \"inLanguage\": \"en\",\n  \"isPartOf\": {\n    \"@type\": \"WebSite\",\n    \"name\": \"News\",\n    \"url\": \"https://news.ycombinator.com\"\n  }\n}\n</script>"
+          },
+          {
+            "title": "Open Graph tags",
+            "why": "Present: none. Set og:title, og:description and og:image so previews and link unfurlers describe the page correctly. Replace the og:image URL with a real 1200×630 image:",
+            "snippet": "<meta property=\"og:type\" content=\"website\">\n<meta property=\"og:site_name\" content=\"News\">\n<meta property=\"og:title\" content=\"Hacker News\">\n<meta property=\"og:description\" content=\"Hacker News new past comments ask show jobs submit login 1. Iosevka is an open-source, sans-serif and slab-serif, monospace font ( typeof.net ) 251 points\">\n<meta property=\"og:url\" content=\"https://news.ycombinator.com/\">\n<meta property=\"og:image\" content=\"https://news.ycombinator.com/og-image.png\">"
+          },
+          {
+            "title": "Exactly one <h1>",
+            "why": "Found 0 <h1> elements. Use a single <h1> that names the page, and <h2>/<h3> for sections.",
+            "snippet": ""
+          }
+        ]
+      }
+    },
+    "agent": {
+      "ok": false,
+      "error": "The operation was aborted due to timeout"
+    }
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+    "note": "A content page on the topic itself",
+    "error": "fetch failed"
+  }
+]

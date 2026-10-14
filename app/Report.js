@@ -155,7 +155,7 @@ function AgentCard({ agent }) {
       </div>
       {agent.phase === 'loading' && (
         <p className="muted" aria-live="polite">
-          A TinyFish agent is opening the page in a real browser and reporting what it understood. This takes about 30–45 seconds.
+          A TinyFish agent is opening the page in a real browser and reporting what it understood. This takes 30–60 seconds.
         </p>
       )}
       {agent.phase === 'error' && <p className="muted">The agent test could not complete: {agent.message}</p>}

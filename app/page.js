@@ -44,19 +44,33 @@ export default function Home() {
     }
   }
 
-  // The agent takes ~40s, so the report shows first and the agent test slots in when it is done.
+  // The agent takes 30-60s, so the report shows first and the agent test slots in when it is done.
+  // The run is started once, then polled, so no single request waits on the agent.
   async function runAgent(id, report) {
     setAgent({ phase: 'loading' });
-    try {
+    const call = async (payload) => {
       const res = await fetch('/api/agent-check', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ url: report.finalUrl, ...report.page }),
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
-      if (id !== runId.current) return;
-      if (!res.ok || !data.ok) throw new Error(data.error || 'The agent test failed.');
-      setAgent({ phase: 'done', data });
+      if (!res.ok) throw new Error(data.error || 'The agent test failed.');
+      return data;
+    };
+    try {
+      const { runId: agentRun } = await call({ action: 'start', url: report.finalUrl });
+      const deadline = Date.now() + 180_000;
+      while (Date.now() < deadline) {
+        await new Promise((r) => setTimeout(r, 3000));
+        if (id !== runId.current) return;
+        const data = await call({ action: 'poll', runId: agentRun, ...report.page });
+        if (data.status === 'running') continue;
+        if (!data.ok) throw new Error(data.error || 'The agent test failed.');
+        setAgent({ phase: 'done', data });
+        return;
+      }
+      throw new Error('The agent took too long to finish.');
     } catch (e) {
       if (id === runId.current) setAgent({ phase: 'error', message: e.message });
     }
@@ -110,7 +124,7 @@ export default function Home() {
           </details>
           <label className="check">
             <input type="checkbox" checked={useAgent} onChange={(e) => setUseAgent(e.target.checked)} />
-            Also run the agent test (TinyFish Agent, about 40s)
+            Also run the agent test (TinyFish Agent, 30–60s)
           </label>
         </div>
 
